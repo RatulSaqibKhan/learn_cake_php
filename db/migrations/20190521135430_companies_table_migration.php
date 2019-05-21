@@ -41,6 +41,6 @@ class CompaniesTableMigration extends AbstractMigration
 
     public function down()
     {
-        $this->dropTable('companies');
+        $this->table('companies')->drop()->save();
     }
 }

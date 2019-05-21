@@ -44,4 +44,9 @@ class UsersTableMigration extends AbstractMigration
             ->addForeignKey('company_id', 'companies', 'id', ['delete'=> 'CASCADE', 'update'=> 'NO_ACTION'])
             ->save();
     }
+
+    public function down()
+    {
+        $this->table('users')->drop()->save();
+    }
 }
